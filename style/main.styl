@@ -1,0 +1,62 @@
+html
+{
+    height 100%
+    box-sizing border-box
+    //-webkit-text-size-adjust 100%
+    //-ms-text-size-adjust 100%
+    //text-size-adjust 100%
+}
+
+*
+{
+    margin 0
+    padding 0
+    box-sizing: inherit
+}
+
+*:before, *:after
+{
+    box-sizing inherit
+
+}
+
+body
+{
+    font: 125% / 1.58 'PT Serif', Georgia, 'Times New Roman', Times, serif;
+    min-height 100%
+    position relative
+}
+
+a
+{
+    color #000
+    text-decoration underline
+    text-decoration-color(lighten(#000, 50))
+}
+
+a:hover
+{
+    text-decoration none
+    text-decoration-color(transparent)
+}
+
+img,
+embed,
+object,
+audio,
+video
+{
+    height auto
+    max-width 100%
+}
+
+.wrapper
+{
+    //padding 0 2rem
+    padding 0 .5rem
+}
+
+.content
+{
+    max-width 75ex
+}

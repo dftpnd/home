@@ -1,0 +1,30 @@
+horizontal-line(height, color)
+    background-image linear-gradient(color 1px, transparent 1px)
+    background-size 100% height
+
+vertical-line(width, color)
+    background-image linear-gradient(to right, color 1px, transparent 1px)
+    background-size width 100%
+
+.grid-system
+{
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index -1
+
+    horizontal-line(1.925rem, lighten(#0015FF, 40))
+
+    &:after
+    {
+        content ''
+        display block
+        position absolute
+        height 100%
+        right .5rem
+        left .5rem
+        vertical-line(16.6%, lighten(#000, 60))
+    }
+}

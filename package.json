@@ -1,0 +1,26 @@
+{
+  "name": "my-home",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "make": "node_modules/gulp/bin/gulp.js",
+    "budget": "node_modules/gulp/bin/gulp.js budget"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "count-files": "^1.0.1",
+    "ejs": "^2.5.2",
+    "gulp": "^3.9.1",
+    "gulp-ejs": "^2.2.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-minify": "0.0.14",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.5.0",
+    "performance-budget": "^1.4.2"
+  },
+  "dependencies": {
+    "through2": "^2.0.1"
+  }
+}

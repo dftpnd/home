@@ -1,0 +1,46 @@
+ul
+{
+    list-style none
+    margin-left 2em
+    margin-bottom 1.55em
+}
+
+li
+{
+    position relative
+    &:after
+    {
+        content '•'
+        position absolute
+        left -1em
+        top -2px
+    }
+}
+
+p
+{
+    margin-bottom 1.55em
+    hyphens auto
+}
+
+h1,
+h2,
+h3,
+h4
+{
+    font-weight normal
+    text-rendering optimizeLegibility
+}
+
+h4
+{
+    font-size 140%
+    line-height 1.05
+    margin-bottom 1.19em
+}
+
+p + h4,
+ul + h4
+{
+    margin-top 2.2em
+}

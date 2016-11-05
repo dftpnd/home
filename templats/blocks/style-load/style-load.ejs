@@ -1,0 +1,9 @@
+<link rel="preload" href="<%= pageName %>.css" as="style" onload="this.rel='stylesheet'">
+<noscript>
+    <link rel="stylesheet" href="<%= pageName %>.css">
+</noscript>
+
+<script>
+    <%- include('../../../docs/scripts/lib/load-css.min.js'); %>
+    <%- include('../../../docs/scripts/lib/load-css.polyfill.min.js'); %>
+</script>

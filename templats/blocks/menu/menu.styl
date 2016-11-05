@@ -1,0 +1,105 @@
+.menu
+{
+    display flex
+    vertical-align text-bottom
+    padding-top 1.15em
+    margin-bottom 1.15em
+
+    &__item
+    {
+        position relative
+        display block
+        text-decoration none
+        padding .5rem 0
+
+        &:not(:last-child)
+        {
+            margin-right 1.5ex
+        }
+
+        &:nth-child(1)
+        {
+            &:before, &:after
+            {
+                content 'Гостевая'
+            }
+        }
+        &:nth-child(2)
+        {
+            &:before, &:after
+            {
+                content 'Мысли'
+            }
+        }
+        &:nth-child(3)
+        {
+            &:before, &:after
+            {
+                content 'Проекты'
+            }
+        }
+        &:nth-child(4)
+        {
+            &:before, &:after
+            {
+                content 'События'
+            }
+        }
+
+        &:before, &:after
+        {
+            display block
+            position absolute
+            top .5rem
+            left 0
+            width 100%
+            opacity 0
+            will-change transform, opacity
+        }
+
+        &:after
+        {
+            color: #F0F;
+            z-index: -2;
+        }
+
+        &:before
+        {
+            color: #0FF;
+            z-index: -1;
+        }
+
+        &:hover:before
+        {
+            opacity .3
+            animation: glitch .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both 2;
+        }
+
+        &:hover:after
+        {
+            opacity .3
+            animation: glitch .3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both 1;
+        }
+    }
+
+}
+
+@keyframes glitch
+{
+    0%
+    {
+        transform: translate(0);
+    }
+    33%
+    {
+        transform: translate(2px, 1px);
+    }
+    66%
+    {
+        transform: translate(-1px, -1px);
+    }
+    to
+    {
+        transform: translate(0);
+    }
+}

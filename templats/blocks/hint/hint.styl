@@ -1,0 +1,19 @@
+.hint
+{
+    indent = -2px
+
+    position relative
+
+    &:after
+    {
+        content ''
+        position absolute
+        top indent
+        right indent
+        bottom indent
+        left indent
+        background lighten(#000, 90)
+        z-index -1
+    }
+
+}
