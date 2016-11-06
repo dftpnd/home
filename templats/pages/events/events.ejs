@@ -6,9 +6,13 @@
     </head>
     <body>
         <%- include('../../blocks/menu/menu', {state: 'events'}); %>
-
-        <h1>Еще свератать надо..</h1>
-        <%- include('../../blocks/footer/footer'); %>
+        <div class="wrapper">
+            <article class="content">
+                <h1>Еще свератать надо..</h1>
+            </article>
+            <%- include('../../blocks/footer/footer'); %>
+        </div>
+        <%- include('../../blocks/insertion/insertion'); %>
     </body>
 </html>
 

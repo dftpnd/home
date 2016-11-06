@@ -6,10 +6,12 @@
     </head>
     <body>
         <%- include('../../blocks/menu/menu', {state: 'think'}); %>
-
-        <h1>Тишина..</h1>
-
-        <%- include('../../blocks/footer/footer'); %>
+        <div class="wrapper">
+            <article class="content">
+                <h1>Вспоминаю...</h1>
+            </article>
+            <%- include('../../blocks/footer/footer'); %>
+        </div>
+        <%- include('../../blocks/insertion/insertion'); %>
     </body>
 </html>
-
