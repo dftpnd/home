@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
     <head>
+        <title>М.Г. - Гостевая</title>
         <%- include('../../blocks/head/head'); %>
-        <%- include('../../blocks/style-load/style-load', {pageName: 'index'}); %>
+
+        <%- include('../../blocks/insertion/insertion'); %>
     </head>
     <body>
         <%- include('../../blocks/menu/menu', {state: 'index'}); %>
@@ -36,18 +38,9 @@
                     <li>iterm2</li>
                 </ul>
 
-                <h4>Используемая литература</h4>
-                <ul>
-                    <li><a href="http://store.artlebedev.ru/books/design-theory/kovodstvo4/">Ководство</a></li>
-                    <li>Совершенный код</li>
-                    <li><a href="https://github.com/karmazzin/eloquentjavascript_ru">Выразительный JavaScript</a></li>
-                    <li>JavaScript. Шаблоны</li>
-                    <li><a href="https://git-scm.com/book/en/v2">Pro Git</a></li>
-                </ul>
             </article>
             <%- include('../../blocks/footer/footer'); %>
         </div>
 
-        <%- include('../../blocks/insertion/insertion'); %>
     </body>
 </html>

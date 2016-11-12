@@ -1,7 +1,14 @@
-<%- include('../../blocks/grid-system/grid-system'); %>
+<!--<%- include('../../blocks/grid-system/grid-system'); %>-->
 
 <script>
-    WebFontConfig = { google: { families: ['PT Serif'] } };
+    WebFontConfig = {
+        google: {
+            families: [
+                'PT Serif',
+                'PT+Sans:400,700&subset=cyrillic'
+            ]
+        }
+    };
     (function(d) {
         var wf = d.createElement('script'), s = d.scripts[0];
         wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js';
