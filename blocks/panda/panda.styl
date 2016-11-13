@@ -1,0 +1,21 @@
+.panda
+{
+    display inline-block
+    width 120px
+
+    @media (max-width: size-m)
+    {
+        & + *
+        {
+            margin-top -.3rem
+        }
+    }
+
+    @media (min-width: size-m)
+    {
+        float left
+        margin 0 1.5rem 0 0
+    }
+}
+
+

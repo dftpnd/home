@@ -8,13 +8,11 @@ var minify = require('gulp-minify');
 var performanceBudget = require('performance-budget');
 var data = require('./style/variables.json');
 
-gulp.task('default',
-    ['critical-style', 'pages-style', 'minify-scripts', 'block-style', 'assets'],
-    function() { gulp.start('templating');}
-);
+gulp.task('default', ['pages-style', 'minify-scripts', 'block-style', 'assets', 'sections', 'pages']);
 
-gulp.task('critical-style', function() {
-    gulp.src('./style/critical.styl')
+gulp.task('critical-style', function(done) {
+    return gulp
+    .src('./style/critical.styl')
     .pipe(stylus({
         compress: true,
         rawDefine: { data: data }
@@ -42,15 +40,22 @@ gulp.task('block-style', function() {
     .pipe(gulp.dest('./docs/style'));
 });
 
-gulp.task('templating', function() {
+gulp.task('pages', ['critical-style'], function() {
     var criticalStyle = fs.readFileSync('docs/critical.css', 'utf8');
-    return gulp.src('./templats/pages/**/*.ejs')
+    return gulp.src('./pages/**/*.ejs')
+    .pipe(ejs({ criticalStyle: criticalStyle }, { ext: '.html' }))
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./docs'));
+});
+
+gulp.task('sections', ['critical-style'], function() {
+    var criticalStyle = fs.readFileSync('docs/critical.css', 'utf8');
+    return gulp.src('./sections/**/*.ejs')
     .pipe(ejs({ criticalStyle: criticalStyle }, { ext: '.html' }))
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(rename(function(path) { path.dirname = '';}))
     .pipe(gulp.dest('./docs'));
 });
-
 gulp.task('budget', function() {
     gulp.src('./docs/**/*.html')
     .pipe(performanceBudget({ dest: './performance-budget.json' }))
@@ -64,6 +69,6 @@ gulp.task('minify-scripts', function() {
 });
 
 gulp.task('assets', function() {
-    gulp.src(['./templats/blocks/**/*.svg'])
+    gulp.src(['./blocks/**/*.svg'])
     .pipe(gulp.dest('./docs/assets/'));
 });

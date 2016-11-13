@@ -25,18 +25,24 @@ body
 {
     min-height 100%
     position relative
+    overflow-y scroll
 }
 
 a
 {
     color inherit
     text-decoration underline
-}
 
-a:hover
-{
-    text-decoration none
-    text-decoration-color(transparent)
+    &:hover
+    {
+        color #C00
+    }
+
+    &:visited
+    {
+        text-decoration none
+        text-decoration-color transparent
+    }
 }
 
 img,
@@ -54,20 +60,28 @@ video
     padding 0 .5rem
 }
 
-.wrapper,
-.menu
+article
 {
-    position relative
-    max-width 67ex
+    &.content
+    {
+        p
+        {
+            max-width 67ex
+        }
+    }
 }
 
 @media (min-width: size-m)
 {
-
     .wrapper,
     .menu
     {
-        margin-left 8.3%
+        margin-left $g-4
+    }
+
+    .im-panda
+    {
+        margin-left -($g-1)
     }
 }
 
@@ -77,6 +91,6 @@ video
     .wrapper,
     .menu
     {
-        margin-left 16.6%
+        margin-left $g-6
     }
 }

@@ -1,6 +1,6 @@
 body
 {
-    font: 125% / 1.58 'PT Serif', 'Times New Roman', Georgia,  serif
+    font: 125% / 1.58 'PT Serif', 'Times New Roman', Georgia, serif
 
 }
 
@@ -9,11 +9,22 @@ h2,
 h3,
 h4
 {
-    //font: 145% / 1.58 'PT Sans Bold', Arial, sans-serif
-    font: 250% / .8 Forum, Arial, sans-serif
+    font-weight 900
     color #000
 }
 
+h1
+{
+    font: 250% 'Lucida Grande', Geneva, Verdana, sans-serif
+    margin: 1.3em 0 .36em
+}
+
+h2
+{
+    font: 200% 'Lucida Grande', Geneva, Verdana, sans-serif
+    margin: 1.3em 0 .6em
+
+}
 
 ul
 {
@@ -40,15 +51,14 @@ p
     hyphens auto
 }
 
-h4
-{
-    //font-size 140%
-    //line-height 1.05
-    margin-top: 1.53em;
-    margin-bottom .77em
-}
-
 .content h4:first-child
 {
     margin-top 1.9em
+}
+
+.subtitle-time
+{
+    font-size 90%
+    font-style italic
+    color $color-light-gray
 }
