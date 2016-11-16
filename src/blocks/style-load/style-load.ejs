@@ -1,9 +1,10 @@
-<link rel="preload" href="<%= pageName %>.css" as="style" onload="this.rel='stylesheet'">
+<link rel="preload" href="/home/style/<%= pageName %>.css" as="style" onload="this.rel='stylesheet'">
 <noscript>
-    <link rel="stylesheet" href="<%= pageName %>.css">
+    <link rel="stylesheet" href="/home/style/<%= pageName %>.css">
 </noscript>
 
 <script>
-    <%- include('../../../docs/scripts/lib/load-css.min.js'); %>
-    <%- include('../../../docs/scripts/lib/load-css.polyfill.min.js'); %>
+    <%- include('../../../scripts/lib/load-css.min.js'); %>
 </script>
+
+<script src="/home/scripts/lib/load-css.polyfill.min.js" async></script>

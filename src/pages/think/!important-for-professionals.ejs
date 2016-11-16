@@ -3,6 +3,7 @@
     <head>
         <title>М.Г. - Мыслы</title>
         <%- include('../../blocks/head/head'); %>
+        <%- include('../../blocks/style-load/style-load', {pageName: 'think'}); %>
     </head>
     <body>
         <%- include('../../blocks/menu/menu', {state: 'think'}); %>
@@ -10,6 +11,9 @@
             <article>
                 <h2>!important для профессионалов</h2>
                 <time class="subtitle-time" datetime="2016-11-13">13 ноября 2016</time>
+                <div class="important-hd">
+                    !important
+                </div>
                 <p>!!</p>
             </article>
             <%- include('../../blocks/footer/footer'); %>

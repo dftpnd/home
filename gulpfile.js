@@ -8,7 +8,7 @@ var minify = require('gulp-minify');
 var performanceBudget = require('performance-budget');
 var data = require('./src/style/variables.json');
 
-gulp.task('default', ['pages-style', 'minify-scripts', 'block-style', 'assets', 'sections', 'pages']);
+gulp.task('default', ['pages-style', 'minify-scripts', 'sections-style', 'assets', 'sections', 'pages']);
 
 gulp.task('critical-style', function(done) {
     return gulp
@@ -30,8 +30,8 @@ gulp.task('pages-style', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('block-style', function() {
-    gulp.src('./src/templats/blocks/**/*.styl')
+gulp.task('sections-style', function() {
+    gulp.src('./src/sections/**/*.styl')
     .pipe(stylus({
         compress: true,
         rawDefine: { data: data }
