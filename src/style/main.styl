@@ -8,6 +8,11 @@ html
     color lighten(#000, 20)
 }
 
+body
+{
+    padding 0 .5rem
+}
+
 *
 {
     margin 0
@@ -57,11 +62,6 @@ video
     max-width 100%
 }
 
-.wrapper
-{
-    padding 0 .5rem
-}
-
 article
 {
     &.content
@@ -73,9 +73,16 @@ article
     }
 }
 
+.vw-100
+{
+    position relative
+    right .5rem
+    width calc(100% + 1rem)
+}
+
 @media (min-width: size-m)
 {
-    .wrapper,
+    .limiter,
     .menu
     {
         margin-left $g-4
@@ -85,14 +92,27 @@ article
     {
         margin-left -($g-1)
     }
+
+    .vw-100
+    {
+        position relative
+        right calc(100vw - (100vw * .916666) + .5rem)
+        width calc(100% + (100vw - (100vw * .916666) + 1rem))
+    }
 }
 
 @media (min-width: size-l)
 {
-
-    .wrapper,
+    .limiter,
     .menu
     {
         margin-left $g-6
+    }
+
+    .vw-100
+    {
+        position relative
+        right calc(100vw - (100vw * .833333) + .5rem)
+        width calc(100% + (100vw - (100vw * .833333) + 1rem))
     }
 }
