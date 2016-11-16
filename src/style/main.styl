@@ -30,17 +30,20 @@ body
 
 a
 {
-    color inherit
     text-decoration underline
+    color inherit
 
-    &:hover, &:visited:hover
-    {
-        color #C00
-    }
-
-    &:visited
+    &:visited,
+    &:visited *
     {
         color #B40EB4
+    }
+
+    &:hover,
+    &:visited:hover,
+    &:visited:hover *
+    {
+        color #C00
     }
 }
 
@@ -65,7 +68,7 @@ article
     {
         p
         {
-            max-width 67ex
+            max-width $max-length
         }
     }
 }

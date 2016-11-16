@@ -29,16 +29,19 @@
         padding .5rem 0
         margin-right 3ex
 
-        &:visited
+        &:visited *
         {
             color #000
         }
 
-        &:first-child{
+        &:first-child
+        {
             padding-left .5rem
         }
+
         &.active span
         {
+            color #C00 !important
             border-bottom 3px solid
         }
 
@@ -47,7 +50,7 @@
             border-bottom 3px solid
         }
 
-        &.active:active span
+        &:hover span
         {
             border-bottom 1px solid
         }
