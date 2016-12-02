@@ -8,15 +8,145 @@
     <body>
         <%- include('../../blocks/menu/menu', {state: 'think'}); %>
         <div class="limiter">
-            <article>
-                <h2>!important для профессионалов</h2>
+            <article class="content">
+                <h2>Белый !important на черном фоне</h2>
                 <time class="subtitle-time" datetime="2016-11-13">13 ноября 2016</time>
                 <div class="important-hd vw-100">
                     <div class="limiter">
                         !important
                     </div>
                 </div>
-                <p>!!</p>
+                <p>для профессионалов.</p>
+                <p>
+                    &mdash; Когда он&nbsp;может пригодиться, он&nbsp;же вроде для костылей?<br>
+                    &mdash; ну например:
+                </p>
+                <h3>В тестировании</h3>
+                <pre class="mime" contenteditable="true">
+*,
+*:after,
+*:before
+{
+    transition: none !important;
+    animation: none !important;
+}
+                </pre>
+                <p>
+                    &mdash; Чего-чего? <br>
+                    &mdash; В&nbsp;разработке мы&nbsp;используем анимацию, которая может поломать
+                            регрессионные тесты, лучше ее&nbsp;сразу выключить.
+                </p>
+
+                <h3>В универсальных свойствах</h3>
+                <p>&mdash; Каких свойствах? <br>
+                    &mdash; Все просто рассмотрим на&nbsp;примере <em>background</em> <br>
+                           Есть блок в&nbsp;нескольких вариациях. Фон блока задан красным,
+                           а&nbsp;картинку на&nbsp;блоке определяет модификатор.
+
+
+                </p>
+                <pre class="mime" contenteditable="true">
+.block
+{
+    background-color: red<mark>!important</mark>;
+}
+
+.block__var1
+{
+    background: url(cat.png);
+}
+
+.block__var2
+{
+    background: url(dog.png);
+}
+                </pre>
+                <p>
+                    Без <em>!important</em> свойство background будет более сильным
+                    чем background-color,
+                    так как содержит в&nbsp;себе его определение и&nbsp;по&nbsp;умолчанию обнулит.
+                    Так мы&nbsp;гарантируем иммутабельность.
+                    Вот еще пример:
+                </p>
+                <pre class="mime" contenteditable="true">
+&lt;div class="center-block title"&gt;
+    Где я?
+&lt;div&gt;
+
+.center-block
+{
+    width: 300px;
+    margin: 0 auto;
+}
+.title
+{
+    margin-top: 10px <mark>!important</mark>;
+}
+                </pre>
+                <p>
+                    Что мы&nbsp;добились с&nbsp;important? Блок выровнен по&nbsp;центру
+                    и&nbsp;имеет отступ сверху как у&nbsp;заголовка. Строго говоря эту проблему можно
+                    решить без <em>important</em>,
+                    достаточно вложить один из&nbsp;элементов в&nbsp;другой, чтобы они не
+                    мешали друг другу, но&nbsp;иногда не&nbsp;бывает
+                    лишних ресурсов в&nbsp;виде оберточного тега.
+                </p>
+
+                <h3>Для иммутабелности</h3>
+                <p>
+                    Иногда приходится создавать классы с&nbsp;громкими именами, например <em>.anchor</em>.
+                    Будет странно если он&nbsp;не&nbsp;будет выполнять своего предназначения:
+                </p>
+                <pre class="mime" contenteditable="true">
+&lt;ul class="block"&gt;
+    &lt;li class="block__item clear" &gt;...&lt;/li&gt;
+    &lt;li class="block__item" &gt;...&lt;/li&gt;
+    &lt;li class="block__item" &gt;...&lt;/li&gt;
+&lt;/ul&gt;
+
+.block .block__item
+{
+    float:left
+}
+
+.anchor
+{
+    float: none <mark>!important</mark>
+}
+
+                </pre>
+
+
+                <h3>Тогда откуда ненависть?</h3>
+                <p>
+                    У&nbsp;important есть есть черная сторона,
+                    это свойство увеличивает специфичность до&nbsp;максимума,
+                    которую можно перебить только увеличив специфичность и&nbsp;добавив important,
+                    что превращает поддержку такого кода в&nbsp;боль. Если в&nbsp;вашем коде есть что то&nbsp;такое:
+                </p>
+                <pre class="mime" contenteditable="true">
+/* плохо */
+&lt;div class="block dark light"&gt;&lt;/div&gt;
+
+.block
+{
+    color: red;
+}
+
+.block.dark
+{
+    color: black!important;
+}
+
+.block.light
+{
+    color: white;
+}
+
+                </pre>
+                <p>
+                    то сюдя по всему у вас проблемы в логике, которую пытается решить цсс.
+                </p>
             </article>
             <%- include('../../blocks/footer/footer'); %>
         </div>
