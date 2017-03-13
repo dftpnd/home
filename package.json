@@ -5,20 +5,24 @@
   "main": "index.js",
   "scripts": {
     "make": "node_modules/gulp/bin/gulp.js",
+    "watch": "node_modules/gulp/bin/gulp.js watch",
     "budget": "node_modules/gulp/bin/gulp.js budget"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-preset-es2015": "~6.24.0",
     "count-files": "^1.0.1",
     "ejs": "^2.5.2",
     "express": "^4.14.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "~6.1.2",
     "gulp-ejs": "^2.2.1",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-minify": "0.0.14",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "~2.1.0",
+    "gulp-watch": "~4.3.11",
     "performance-budget": "^1.4.2"
   },
   "dependencies": {

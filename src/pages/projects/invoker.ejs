@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>М.Г. - Тренажер Инвока</title>
+        <%- include('../../blocks/head/head'); %>
+        <%- include('../../blocks/style-load/style-load', {pageName: 'invoker'}); %>
+    </head>
+    <body>
+        <button type=button id="start">Начать обучение!</button>
+        
+        <div id="helper"></div>
+        
+        <div id="reagents" class="reagents">
+            <div class="reagent reagent__q">Q</div>
+            <div class="reagent reagent__w">W</div>
+            <div class="reagent reagent__e">E</div>
+        </div>
+        <div class="invoker">
+                <img src="/img/invoker/invoker.png" alt="Invoker">
+        </div>
+
+        <div id="skills" class="skills" >
+            <input type="button" value="q" class="skill skill__quas">
+            <input type="button" value="w" class="skill skill__wex">
+            <input type="button" value="e" class="skill skill__exort">
+            <input type="button" value="i" class="skill skill__invoke">
+        </div>
+
+        <div id="invoke-list" class="invoke-list"></div>
+        
+        <div class="limiter">
+            <%- include('../../blocks/footer/footer'); %>
+        </div>
+        <%- include('../../blocks/insertion/insertion'); %>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"   integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="   crossorigin="anonymous" defer></script>
+        <script src="/scripts/invoker.js" defer></script>
+    </body>
+</html>

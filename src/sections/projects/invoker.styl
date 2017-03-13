@@ -1,0 +1,89 @@
+// @import '../../blocks/hint/hint.styl'
+
+.invoker
+{
+    text-align: center
+
+    width: 150px
+    height: 300px
+    margin: 0 auto
+
+}
+
+.reagents{
+    display:flex
+    justify-content: center
+}
+
+.reagent{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px
+    display: flex;
+    justify-content: center
+    align-items: center
+
+    &__q{
+        background-color: skyblue
+    }
+    &__w{
+        background-color: yellow
+    }
+    &__e{
+        background-color: red
+    }
+}
+.skills{
+    display:flex
+    justify-content: center
+    padding-top: 20px
+}
+.skill{
+    width: 50px
+    height: 50px
+    color: transparent
+    background-size: 100%
+    
+    border: none
+    outline: none
+
+    &:not(:last-child){
+        margin-right: 10px
+    }
+
+    &__quas{
+        background-image: url(/img/invoker/quas.png)
+    }
+    
+    &__wex{
+        background-image: url(/img/invoker/wex.png)
+    }
+
+    &__exort{
+        background-image: url(/img/invoker/exort.png)
+    }
+    
+    &__invoke{
+        background-image: url(/img/invoker/invoke.png)
+    }
+
+    &.clicked{
+        transform: scale(1.1);
+    }
+}
+
+.invoke-list{
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    width: 50%
+    margin-top: 10px
+    
+    img{
+        // margin-left: 10px
+    }
+
+    img:not(:last-child){
+        transform: scale(.5);
+    }
+}
