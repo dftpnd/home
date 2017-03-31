@@ -80,6 +80,14 @@
             <div>`
         }
         
+        function loadAllImage(){
+            skills.forEach((skill)=>{
+                console.log(skill.picture);
+            });
+        }
+        
+        loadAllImage();
+
         $(document).keyup(function(e) {
             var skillCode = skillKeyMap[e.keyCode];
             

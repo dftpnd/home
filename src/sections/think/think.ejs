@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <title>М.Г. - Мыслы</title>
-        <%- include('../../blocks/head/head'); %>
-        <%- include('../../blocks/style-load/style-load', {pageName: 'think'}); %>
-    </head>
-    <body>
-        <%- include('../../blocks/menu/menu', {state: 'think'}); %>
-        <div class="limiter">
-            <h1>Хуисли</h1>
 
+<head>
+    <title>М.Г. - Мыслы</title>
+    <%- include('../../blocks/head/head'); %>
+        <%- include('../../blocks/style-load/style-load', {pageName: 'think'}); %>
+</head>
+
+<body>
+    <%- include('../../blocks/menu/menu', {state: 'think'}); %>
+        <div class="limiter">
             <article>
                 <a href="/think/!important-for-professionals.html">
                     <h2>Белый !important на черном фоне</h2>
@@ -25,5 +25,6 @@
             <%- include('../../blocks/footer/footer'); %>
         </div>
         <%- include('../../blocks/insertion/insertion'); %>
-    </body>
+</body>
+
 </html>

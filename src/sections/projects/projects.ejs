@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <title>М.Г. - Проекты</title>
-        <%- include('../../blocks/head/head'); %>
-    </head>
-    <body>
-        <%- include('../../blocks/menu/menu', {state: 'projects'}); %>
-        <div class="limiter">
-            <h1>Хуекты</h1>
 
+<head>
+    <title>М.Г. - Проекты</title>
+    <%- include('../../blocks/head/head'); %>
+</head>
+
+<body>
+    <%- include('../../blocks/menu/menu', {state: 'projects'}); %>
+        <div class="limiter">
             <article>
                 <a href="/projects/invoker.html">
                     <h2>Тренажер Инвокера</h2>
                 </a>
                 <time class="subtitle-time" datetime="2017-03-12">12 ноября 2017</time>
-                
-               <p>
-                Простая игра выбора скилов Инвока на время ->
-               </p>
+
+                <p>
+                    Простая игра выбора скилов Инвока на время ->
+                </p>
             </article>
             <%- include('../../blocks/footer/footer'); %>
         </div>
         <%- include('../../blocks/insertion/insertion'); %>
-    </body>
+</body>
+
 </html>
-
-
